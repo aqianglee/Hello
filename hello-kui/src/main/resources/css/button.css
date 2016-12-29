@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+.btn {
+	display: inline-block;
+	height: 1.6em;
+	margin: .5em;
+	line-height: 1.6em;
+	padding: .5em;
+	background-color: #EEE;
+}
+
+.btn-left {
+	float: left;
+}
+
+.btn-right {
+	float: right;
+}
+
+.btn-notext {
+	width: 1.6em;
+}
+
+.btn-radio {
+	border-radius: .8em;
+}

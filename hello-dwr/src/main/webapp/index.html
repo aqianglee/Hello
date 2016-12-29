@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='/dwr/engine.js'></script>
+<script type='text/javascript' src='/dwr/interface/RemoteAction.js'></script>
+</head>
+<body>
+	<button id="click">Click me</button>
+	<button id="get-student">get student</button>
+	<button id="set-student">set student</button>
+	<button id="get-students">get students</button>
+	<button id="to-other-page">to other page</button>
+	<button id="send-double-param">send double param</button>
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById("click").onclick = function() {
+				RemoteAction.greeting("aqiang");
+			}
+			document.getElementById("to-other-page").onclick = function() {
+				RemoteAction.toOtherPage();
+			}
+			document.getElementById("send-double-param").onclick = function() {
+				RemoteAction.sendDoubleParam("Hello", 3);
+			}
+			document.getElementById("get-student").onclick = function() {
+				RemoteAction.getStudent({
+					callback : function(data) {
+						console.log(data);
+					}
+				});
+			}
+			document.getElementById("set-student").onclick = function() {
+				RemoteAction.setStudent({
+					name : "kyo",
+					age : 25,
+					gender : "man"
+				});
+			}
+			document.getElementById("get-students").onclick = function() {
+				RemoteAction.getStudents({
+					callback : function(data) {
+						for(var i = 0; i < data.length; i ++) {
+							console.log(data[i]);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</body>
+</html>

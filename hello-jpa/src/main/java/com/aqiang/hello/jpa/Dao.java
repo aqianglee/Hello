@@ -23,4 +23,7 @@ public interface Dao {
 
 	public <T extends Persistable> List<T> list(Class<T> clazz, List<Condition> coditions, List<Order> orders,
 			int first, int size);
+
+	public Query query();
+
 }

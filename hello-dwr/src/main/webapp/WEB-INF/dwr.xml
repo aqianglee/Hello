@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+	<allow>
+		<create creator="new" javascript="RemoteAction">
+			<param name="class" value="com.aqiang.hello.dwr.remote.RemoteAction" />
+		</create>
+		<convert converter="bean" match="com.aqiang.hello.entities.Student"></convert>
+	</allow>
+</dwr>

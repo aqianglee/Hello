@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 public abstract class ComplexCondition implements Condition {
 	private List<Condition> conditions = new ArrayList<>();
 
@@ -17,15 +19,17 @@ public abstract class ComplexCondition implements Condition {
 
 	@Override
 	public String generate(Map<String, Object> args) {
-		StringBuffer buffer = new StringBuffer();
-		for (int i = 0; i < conditions.size(); i++) {
-			Condition condition = conditions.get(i);
-			buffer.append(condition.generate(args));
-			if (i < conditions.size() - 1) {
-				buffer.append(String.format(" %s ", getLinkMethod()));
-			}
+		if (conditions.isEmpty()) {
+			return null;
 		}
-		return buffer.toString();
+		List<String> buffer = new ArrayList<>();
+		for (Condition condition : conditions) {
+			buffer.add(condition.generate(args));
+		}
+		if (buffer.size() == 1) {
+			return buffer.get(0);
+		}
+		return String.format("( %s )", StringUtils.join(buffer, String.format(" ) %s ( ", getLinkMethod())));
 	}
 
 	protected abstract String getLinkMethod();

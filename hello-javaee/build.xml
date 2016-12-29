@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="k-ui" default="deploy">
+	<property name="server.home"
+		value="/Users/administrator/Documents/Tools/apache-tomcat-6.0.45"></property>
+	<property name="webcontent" value="./src/main/webapp"></property>
+	<property name="app.name" value="myapp"></property>
+
+	<target name="tomcat.stop">
+		<java jar="${server.home}/bin/bootstrap.jar" fork="true">
+			<jvmarg value="-Dcatalina.home=${server.home}" />
+			<arg line="stop" />
+		</java>
+	</target>
+
+	<target name="deploy" depends="install">
+		<java jar="${server.home}/bin/bootstrap.jar" fork="true">
+			<jvmarg value="-Dcatalina.home=${server.home}" />
+		</java>
+	</target>
+
+	<target name="install" depends="package">
+		<copy todir="${server.home}/webapps" flatten="true">
+			<fileset dir="./target/">
+				<include name="*war" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="package" depends="clean">
+		<war destfile="./target/${app.name}.war">
+			
+		</war>
+	</target>
+
+	<target name="clean" depends="tomcat.stop">
+		<delete>
+			<fileset dir="./target/">
+				<include name="*.war" />
+			</fileset>
+		</delete>
+
+		<delete>
+			<fileset dir="${server.home}/webapps">
+				<include name="*.war" />
+			</fileset>
+		</delete>
+
+		<delete dir="${server.home}/webapps/${app.name}">
+		</delete>
+	</target>
+</project>

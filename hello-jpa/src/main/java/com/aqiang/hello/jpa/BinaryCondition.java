@@ -2,11 +2,11 @@ package com.aqiang.hello.jpa;
 
 import java.util.Map;
 
-public abstract class BasicCondition implements Condition {
+public abstract class BinaryCondition implements Condition {
 	protected String fieldName;
 	protected Object value;
 
-	public BasicCondition(String fieldName, Object value) {
+	public BinaryCondition(String fieldName, Object value) {
 		this.fieldName = fieldName;
 		this.value = value;
 	}
