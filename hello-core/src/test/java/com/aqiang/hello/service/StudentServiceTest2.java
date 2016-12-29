@@ -56,6 +56,28 @@ public class StudentServiceTest2 extends CoreTest {
 		assert list.size() == 4;
 	}
 
+	@Test
+	public void testGetStudentsByNameAndAgeOrGenderIsNull() {
+		studentService.saveStudent(createStudent("kyo", 25, "male"));
+		studentService.saveStudent(createStudent("kyo", 24, "male"));
+		studentService.saveStudent(createStudent("kyo", 23, "female"));
+		studentService.saveStudent(createStudent("aqiang", 25, null));
+		studentService.saveStudent(createStudent("moon", 24, null));
+		List<Student> list = studentService.getStudentsByNameAndAgeOrGenderIsNull("kyo", 25);
+		assert list.size() == 3;
+	}
+
+	@Test
+	public void testGetStudentsByNameOrAgeAndGenderIsNull() {
+		studentService.saveStudent(createStudent("kyo", 25, null));
+		studentService.saveStudent(createStudent("kyo", 24, "male"));
+		studentService.saveStudent(createStudent("kyo", 23, "female"));
+		studentService.saveStudent(createStudent("aqiang", 25, null));
+		studentService.saveStudent(createStudent("moon", 24, null));
+		List<Student> list = studentService.getStudentsByNameOrAgeAndGenderIsNull("kyo", 25);
+		assert list.size() == 2;
+	}
+
 	private Student createStudent(String name, int age, String gender) {
 		Student student = new Student();
 		student.setGender(gender);

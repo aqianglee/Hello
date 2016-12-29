@@ -20,4 +20,32 @@ public interface StudentService {
 	public List<Student> getStudentsByNameAndAge(String name, int age);
 
 	public List<Student> getStudentsByNameAndAgeAndGender(String name, int age, String gender);
+
+	public List<Student> getStudentsAgeGT(int age);
+
+	public List<Student> getStudentsAgeGTEQ(int age);
+
+	public List<Student> getStudentsAgeLT(int age);
+
+	public List<Student> getStudentsAgeLTEQ(int age);
+
+	public List<Student> getStudentsByAge(int age);
+
+	public List<Student> getStudentsGenderIsNull();
+
+	public List<Student> getStudentsGenderIsNotNull();
+
+	public List<Student> getStudentsByGender(String gender);
+
+	public List<Student> getstudentsOrderByName();
+
+	public List<Student> getstudentsOrderByNameDesc();
+
+	public List<Student> getstudentsOrderByNameAndAgeDesc();
+
+	public List<Student> getstudentsNameLike(String name);
+
+	public List<Student> getStudentsByNameAndAgeOrGenderIsNull(String string, int age);
+
+	public List<Student> getStudentsByNameOrAgeAndGenderIsNull(String string, int age);
 }

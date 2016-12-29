@@ -1,3 +1,5 @@
 /test-output/
 /.settings/
 /H2Test/
+/target/
+/logs/
