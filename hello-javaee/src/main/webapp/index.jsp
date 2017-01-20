@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<a href="HelloServlet?addr=https://www.baidu.com">Hello Servlet</a>
 </body>
 </html>
