@@ -1,28 +1,10 @@
 package com.aqiang.hello.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+public class Student {
 
-import com.aqiang.hello.jpa.Persistable;
-
-@Entity
-public class Student implements Persistable {
-
-	@Id
-	@GeneratedValue
-	private Integer id;
 	private String name;
 	private Integer age;
 	private String gender;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -46,6 +28,11 @@ public class Student implements Persistable {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", gender=" + gender + "]";
 	}
 
 }
