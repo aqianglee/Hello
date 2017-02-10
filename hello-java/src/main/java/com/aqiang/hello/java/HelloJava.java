@@ -1,3 +1,5 @@
+package com.aqiang.hello.java;
+
 import com.aqiang.hello.entities.Student;
 
 public class HelloJava {

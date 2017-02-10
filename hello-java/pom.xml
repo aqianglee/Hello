@@ -26,7 +26,6 @@
 					<descriptors>
 						<descriptor>src/main/assembly/assembly.xml</descriptor>
 					</descriptors>
-
 				</configuration>
 				<executions>
 					<execution>
