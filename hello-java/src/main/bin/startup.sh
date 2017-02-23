@@ -1,1 +1,1 @@
-java -cp ../lib/hello-java-0.0.1-SNAPSHOT.jar com.aqiang.hello.java.HelloJava
+java -jar ../lib/hello-java-0.0.1-SNAPSHOT.jar

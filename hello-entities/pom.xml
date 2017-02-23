@@ -7,4 +7,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>hello-entities</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>com.aqiang</groupId>
+			<artifactId>hello-jpa</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

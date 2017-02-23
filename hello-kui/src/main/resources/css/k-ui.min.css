@@ -31,7 +31,6 @@
 .btn-radio {
 	border-radius: .8em;
 }
-
 @CHARSET "UTF-8";
 .dialog-background {
 	width: 100%;
@@ -55,3 +54,35 @@
 
 
 
+@CHARSET "UTF-8";
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table>thead>tr>th {
+    text-align: left;
+}
+
+th, td {
+    padding: 7px 15px;
+}
+
+.table-normal>tbody>tr>td {
+    border: 1px solid #333;
+}
+
+.table-normal>thead>tr>th {
+    border: 1px solid #333;
+}
+
+.table-three-line>thead>tr {
+    border-bottom: 2px solid #333;
+}
+
+.table-three-line>tbody>tr:not(:last-of-type) {
+    border-bottom: 1px solid #333;
+}.container {
+	width: 60%;
+	margin: 0 auto;
+}

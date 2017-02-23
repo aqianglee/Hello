@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="k-ui" default="deploy">
 	<property name="server.home"
-		value="/Users/administrator/Documents/Tools/apache-tomcat-6.0.45"></property>
+		value="/Users/administrator/Documents/Tools/apache-tomcat-7.0.75"></property>
 
 	<property name="webcontent" value="./src/main/resources"></property>
 
@@ -11,6 +11,8 @@
 			<path path="${webcontent}/js/app/k-ui.js" />
 			<path path="${webcontent}/js/app/button.js" />
 			<path path="${webcontent}/js/app/dialog.js" />
+			<path path="${webcontent}/js/app/table.js"/>
+			<path path="${webcontent}/js/app/container.js"/>
 		</concat>
 
 		<concat destfile="${webcontent}/css/k-ui.min.css" encoding="utf-8"
@@ -18,6 +20,8 @@
 			<path path="${webcontent}/css/k-ui.css" />
 			<path path="${webcontent}/css/button.css" />
 			<path path="${webcontent}/css/dialog.css" />
+			<path path="${webcontent}/css/table.css" />
+			<path path="${webcontent}/css/container.css" />
 		</concat>
 	</target>
 
@@ -65,7 +69,7 @@
 
 		<delete>
 			<fileset dir="${server.home}/webapps">
-				<include name="*.war" />
+				<include name="kui.war" />
 			</fileset>
 		</delete>
 
